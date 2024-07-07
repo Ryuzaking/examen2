@@ -30,17 +30,25 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+
+BASE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
-    'rest_framework',
-
 ]
+
+LOCAL_APPS = [
+    'api'
+]
+
+THIRT_APPS = [
+    'rest_framework'
+]
+
+INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,7 +87,7 @@ WSGI_APPLICATION = 'Examen2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Proyecto',
+        'NAME': 'proyecto',
         'USER': 'postgres',
         'PASSWORD': 'umberto336',
         'HOST': 'localhost',  
